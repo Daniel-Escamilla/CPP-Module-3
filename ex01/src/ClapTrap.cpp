@@ -6,11 +6,11 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 20:13:53 by descamil          #+#    #+#             */
-/*   Updated: 2025/04/30 21:12:59 by descamil         ###   ########.fr       */
+/*   Updated: 2025/05/01 19:37:52 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ClapTrap.hpp"
+#include "../include/ScavTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name)
 	: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
@@ -20,7 +20,42 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
+}
+
+std::string	ClapTrap::getName() const
+{
+	return (_name);
+}
+
+int	ClapTrap::getEnergyPoints() const
+{
+	return (_energyPoints);
+}
+
+int	ClapTrap::getHitPoints() const
+{
+	return (_hitPoints);
+}
+
+int	ClapTrap::getAttackDamage() const
+{
+	return (_attackDamage);
+}
+
+void	ClapTrap::setEnergyPoints(int points)
+{
+	_energyPoints = points;
+}
+
+void	ClapTrap::setHitPoints(int points)
+{
+	_hitPoints = points;
+}
+
+void	ClapTrap::setAttackDamage(int damage)
+{
+	_attackDamage = damage;
 }
 
 void	ClapTrap::attack(const std::string& target)
