@@ -6,26 +6,28 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 20:13:47 by descamil          #+#    #+#             */
-/*   Updated: 2025/04/30 20:56:13 by descamil         ###   ########.fr       */
+/*   Updated: 2025/05/01 19:43:34 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ClapTrap.hpp"
+#include "../include/ScavTrap.hpp"
 
-int	main(void)
+int main()
 {
-	ClapTrap	alpha("Alpha");
+    // Creating ClapTrap object
+    ClapTrap clapTrap("ClapTrap1");
+    clapTrap.attack("Target 1");
+    clapTrap.takeDamage(4);
+    clapTrap.beRepaired(3);
+    clapTrap.attack("Target 2");
 
-	alpha.attack("Target 1");
-	alpha.takeDamage(4);
-	alpha.beRepaired(3);
+    // Creating ScavTrap object
+    ScavTrap scavTrap("ScavTrap1");
+    scavTrap.attack("Target 3");
+    scavTrap.takeDamage(10);
+    scavTrap.beRepaired(5);
+    scavTrap.guardGate();
+    scavTrap.attack("Target 4");
 
-	for (int i = 0; i < 10; ++i)
-		alpha.attack("Dummy");
-
-	alpha.beRepaired(1);
-	alpha.takeDamage(20);
-	alpha.attack("Final Target");
-
-	return (0);
+    return 0;
 }
