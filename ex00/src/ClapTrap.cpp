@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 20:13:53 by descamil          #+#    #+#             */
-/*   Updated: 2025/04/30 21:12:59 by descamil         ###   ########.fr       */
+/*   Updated: 2025/05/01 20:06:31 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap " << getName() << " destroyed" << std::endl;
+}
+
+std::string	ClapTrap::getName() const
+{
+	return (_name);
 }
 
 void	ClapTrap::attack(const std::string& target)
