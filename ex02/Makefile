@@ -9,7 +9,7 @@ SRC =	src/main.cpp \
 
 
 OBJS = $(notdir $(SRC:.cpp=.o))
-OBJDIR = ClapTrap_objects
+OBJDIR = FragTrap_objects
 
 all: $(OBJDIR) $(NAME)
 
