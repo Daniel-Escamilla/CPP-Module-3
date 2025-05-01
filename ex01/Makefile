@@ -1,4 +1,4 @@
-NAME = ClapTrap
+NAME = ScavTrap
 CC = g++
 CFLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
