@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 20:13:20 by descamil          #+#    #+#             */
-/*   Updated: 2025/04/30 20:24:05 by descamil         ###   ########.fr       */
+/*   Updated: 2025/05/01 20:06:57 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ class ClapTrap
 		ClapTrap(std::string name);
 		~ClapTrap();
 
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		std::string	getName() const;
+		void 		attack(const std::string& target);
+		void 		takeDamage(unsigned int amount);
+		void 		beRepaired(unsigned int amount);
 };
 
 #endif
