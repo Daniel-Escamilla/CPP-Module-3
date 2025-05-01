@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 21:16:35 by descamil          #+#    #+#             */
-/*   Updated: 2025/05/01 19:38:21 by descamil         ###   ########.fr       */
+/*   Updated: 2025/05/01 20:06:07 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap Destructor called" << std::endl;
+	std::cout << "ScavTrap " << getName() << " destroyed" << std::endl;
 }
 
 void	ScavTrap::guardGate()
