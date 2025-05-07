@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 19:47:22 by descamil          #+#    #+#             */
-/*   Updated: 2025/05/01 19:54:54 by descamil         ###   ########.fr       */
+/*   Updated: 2025/05/07 13:24:14 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,13 @@
 class FragTrap : public ClapTrap
 {
 	public:
-		FragTrap(std::string name);
+		FragTrap() {};
 		~FragTrap();
+		FragTrap(const FragTrap &copy);
+		FragTrap &operator=(const FragTrap &copy);
+
+		FragTrap(std::string name);
+
 		void	highFivesGuys(void);
 };
 
