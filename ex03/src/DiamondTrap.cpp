@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 20:15:45 by descamil          #+#    #+#             */
-/*   Updated: 2025/05/01 21:23:58 by descamil         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:01:13 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,24 @@ DiamondTrap::DiamondTrap(std::string name)
 	setEnergyPoints(ScavTrap::getEnergyPoints());
 	setAttackDamage(FragTrap::getAttackDamage());
 	std::cout << "DiamondTrap " << _name << " created" << std::endl;
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap &copy)
+	: ClapTrap(copy), FragTrap(copy), ScavTrap(copy)
+{
+	_name = copy._name;
+}
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &copy)
+{
+	if (this != &copy)
+	{
+		setName(copy.getName());
+		setHitPoints(copy.getHitPoints());
+		setEnergyPoints(copy.getEnergyPoints());
+		setAttackDamage(copy.getAttackDamage());
+		_name = copy._name; 
+	}
+	return (*this);
 }
 
 DiamondTrap::~DiamondTrap()
