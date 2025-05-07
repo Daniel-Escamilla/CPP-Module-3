@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 21:16:35 by descamil          #+#    #+#             */
-/*   Updated: 2025/05/01 20:06:01 by descamil         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:01:11 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,24 @@ ScavTrap::ScavTrap(std::string name)
 	setEnergyPoints(50);
 	setAttackDamage(20);
 	std::cout << "ScavTrap " << getName() << " created" << std::endl;	
+}
+
+ScavTrap::ScavTrap(const ScavTrap &copy)
+	: ClapTrap(copy)
+{
+
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &copy)
+{
+	if (this != &copy)
+	{
+		setName(copy.getName());
+		setHitPoints(copy.getHitPoints());
+		setEnergyPoints(copy.getEnergyPoints());
+		setAttackDamage(copy.getAttackDamage());
+	}
+	return (*this);
 }
 
 ScavTrap::~ScavTrap()
