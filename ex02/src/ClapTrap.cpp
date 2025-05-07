@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 20:13:53 by descamil          #+#    #+#             */
-/*   Updated: 2025/05/01 20:05:54 by descamil         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:00:26 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,23 @@ ClapTrap::ClapTrap(std::string name)
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap " << getName() << " destroyed" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &copy)
+{
+	*this = copy;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &copy)
+{
+	if (this != &copy)
+	{
+		_name = copy._name;
+		_hitPoints = copy._hitPoints;
+		_energyPoints = copy._energyPoints;
+		_attackDamage = copy._attackDamage;
+	}
+	return (*this);
 }
 
 std::string	ClapTrap::getName() const
@@ -41,6 +58,11 @@ int	ClapTrap::getHitPoints() const
 int	ClapTrap::getAttackDamage() const
 {
 	return (_attackDamage);
+}
+
+void	ClapTrap::setName(std::string name)
+{
+	_name = name;
 }
 
 void	ClapTrap::setEnergyPoints(int points)
