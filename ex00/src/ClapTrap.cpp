@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 20:13:53 by descamil          #+#    #+#             */
-/*   Updated: 2025/05/01 20:06:31 by descamil         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:00:26 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,61 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap " << getName() << " destroyed" << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &copy)
+{
+	*this = copy;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &copy)
+{
+	if (this != &copy)
+	{
+		_name = copy._name;
+		_hitPoints = copy._hitPoints;
+		_energyPoints = copy._energyPoints;
+		_attackDamage = copy._attackDamage;
+	}
+	return (*this);
+}
+
 std::string	ClapTrap::getName() const
 {
 	return (_name);
+}
+
+int	ClapTrap::getEnergyPoints() const
+{
+	return (_energyPoints);
+}
+
+int	ClapTrap::getHitPoints() const
+{
+	return (_hitPoints);
+}
+
+int	ClapTrap::getAttackDamage() const
+{
+	return (_attackDamage);
+}
+
+void	ClapTrap::setName(std::string name)
+{
+	_name = name;
+}
+
+void	ClapTrap::setEnergyPoints(int points)
+{
+	_energyPoints = points;
+}
+
+void	ClapTrap::setHitPoints(int points)
+{
+	_hitPoints = points;
+}
+
+void	ClapTrap::setAttackDamage(int damage)
+{
+	_attackDamage = damage;
 }
 
 void	ClapTrap::attack(const std::string& target)
