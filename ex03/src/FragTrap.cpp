@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 19:50:24 by descamil          #+#    #+#             */
-/*   Updated: 2025/05/01 21:09:13 by descamil         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:01:15 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,23 @@ FragTrap::FragTrap(std::string name)
 	setEnergyPoints(100);
 	setAttackDamage(30);
 	std::cout << "FragTrap " << getName() << " created" << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap &copy)
+	: ClapTrap(copy)
+{
+	
+}
+FragTrap &FragTrap::operator=(const FragTrap &copy)
+{
+	if (this != &copy)
+	{
+		setName(copy.getName());
+		setHitPoints(copy.getHitPoints());
+		setEnergyPoints(copy.getEnergyPoints());
+		setAttackDamage(copy.getAttackDamage());
+	}
+	return (*this);
 }
 
 FragTrap::~FragTrap()
