@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 20:13:20 by descamil          #+#    #+#             */
-/*   Updated: 2025/05/01 20:47:57 by descamil         ###   ########.fr       */
+/*   Updated: 2025/05/07 13:04:13 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ class ClapTrap
 		int			_energyPoints;
 		int			_attackDamage;
 	public:
-		ClapTrap(std::string name);
+		ClapTrap() {};
 		~ClapTrap();
+		ClapTrap(const ClapTrap &copy);
+		ClapTrap &operator=(const ClapTrap &copy);
+
+		ClapTrap(std::string name);
 
 		std::string	getName() const;
 		int			getEnergyPoints() const;
