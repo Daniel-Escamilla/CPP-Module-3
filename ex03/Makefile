@@ -8,7 +8,6 @@ SRC =	src/main.cpp \
 		src/FragTrap.cpp \
 		src/DiamondTrap.cpp \
 
-
 OBJS = $(notdir $(SRC:.cpp=.o))
 OBJDIR = DiamondTrap_objects
 

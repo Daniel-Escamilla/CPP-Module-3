@@ -7,7 +7,6 @@ SRC =	src/main.cpp \
 		src/ScavTrap.cpp \
 		src/FragTrap.cpp \
 
-
 OBJS = $(notdir $(SRC:.cpp=.o))
 OBJDIR = FragTrap_objects
 

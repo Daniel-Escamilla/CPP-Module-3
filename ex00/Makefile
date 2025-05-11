@@ -5,7 +5,6 @@ CFLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 SRC =	src/main.cpp \
 		src/ClapTrap.cpp \
 
-
 OBJS = $(notdir $(SRC:.cpp=.o))
 OBJDIR = ClapTrap_objects
 

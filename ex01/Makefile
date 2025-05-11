@@ -6,7 +6,6 @@ SRC =	src/main.cpp \
 		src/ClapTrap.cpp \
 		src/ScavTrap.cpp \
 
-
 OBJS = $(notdir $(SRC:.cpp=.o))
 OBJDIR = ScavTrap_objects
 
